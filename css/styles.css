@@ -1,0 +1,136 @@
+:root {
+  --color-principal: #1e293b;
+  --color-fondo: #ffffff;
+  --color-texto: #ffffff;
+  --color-texto-oscuro: #0f172a;
+  --color-borde: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-fondo);
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header  header"
+    "aside   main"
+    "footer footer";
+}
+
+header {
+  grid-area: header;
+  background-color: var(--color-principal);
+  color: var(--color-texto);
+  border-bottom: 1px solid var(--color-borde);
+  padding: 1.5rem 2rem;
+}
+
+header h1 {
+  display: inline-block;
+}
+header p {
+  display: inline-block;
+  opacity: 0.85;
+  margin-left: 1rem;
+}
+
+aside {
+  grid-area: aside;
+  background-color: var(--color-principal);
+  color: var(--color-texto);
+  font-size: 1rem;
+}
+
+aside h2 {
+  margin-bottom: 1rem;
+  border-bottom: 1.5px solid var(--color-borde);
+  text-align: center;
+}
+
+aside ul {
+  list-style: none;
+  text-align: center;
+  font-size: 1.4rem;
+}
+aside a {
+  text-decoration: none;
+  color: var(--color-texto);
+  padding: 0.5rem 1.2rem;
+}
+aside a:hover {
+  background-color: rgba(255, 255, 255, 0.15); /* Ilumina el fondo */
+  cursor: pointer;
+}
+aside li {
+  margin-bottom: 1.8rem;
+}
+
+main {
+  grid-area: main;
+  background-color: var(--color-fondo);
+  color: var(--color-texto-oscuro);
+  padding: 1.5rem 2rem;
+}
+
+
+.tarjetas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.tarjeta {
+  background-color: var(--color-principal);
+  border: 1px solid var(--color-borde);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: var(--color-texto);
+  text-align: center;
+}
+
+.tarjeta-destacada {
+  grid-column: span 2;
+  background-color: var(--color-principal);
+  border: 1px solid var(--color-borde);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: var(--color-texto);
+  text-align: left;
+}
+
+.actividad-reciente h5 {
+  border-radius: 0.5rem;
+  text-align: left;
+}
+.actividad-reciente li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+.actividad-reciente ul {
+  list-style: none;
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--color-principal);
+  color: var(--color-texto);
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .tarjetas-grid {
+    grid-template-columns: 1fr;
+  }
+  .tarjeta-destacada {
+    grid-column: span 1;
+  }
+}
